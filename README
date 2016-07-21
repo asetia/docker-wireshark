@@ -1,1 +1,6 @@
-README created
+README
+
+xhost local:root
+xhost +local:docker
+
+docker run wireshark
