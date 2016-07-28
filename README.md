@@ -1,13 +1,19 @@
 # docker-wireshark
 
-xhost local:root
-xhost +local:docker
-docker run wireshark
+Run Wireshark within a Docker Container
 
-works on ubuntu 14.04 trusty, run with:
+Tested on OSX: (run.sh)
+  Open XQuartz for display connection
+    open -a xquartz
+  Expose XQuartz socket file (not in xterm)
+    socat TCP-LISTEN:6000,reuseaddr,fork UNIX-CLIENT:\"$DISPLAY\"
+  (If socat is not available, install using brew or similar: brew install socat)
+  Run container with necessary privileges
+    sudo docker run --net=host --privileged -e DISPLAY=192.168.99.1:0 asetia/wireshark
 
-sudo docker pull asetia/docker-wireshark
-sudo docker run -ti --net=host --privileged -v $HOME:/root:ro -e XAUTHORITY=/root/.Xauthority -e DISPLAY=$DISPLAY asetia/docker-wireshark
+Tested on Ubuntu 14.04:
+  sudo docker pull asetia/docker-wireshark
+  sudo docker run -ti --net=host --privileged -v $HOME:/root:ro -e XAUTHORITY=/root/.Xauthority -e DISPLAY=$DISPLAY asetia/docker-wireshark
 
-run to access command line:
-docker run -t -i asetia/docker-wireshark /bin/bash
+Run to access command line:
+  docker run -t -i asetia/docker-wireshark /bin/bash
