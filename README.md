@@ -27,6 +27,7 @@ Tested on Ubuntu 14.04:
   sudo docker run -ti --net=host --privileged -v $HOME:/root:ro -e XAUTHORITY=/root/.Xauthority -e 
   DISPLAY=$DISPLAY asetia/docker-wireshark
 
+
 Run to access command line:
 
   docker run -t -i asetia/docker-wireshark /bin/bash
