@@ -22,12 +22,11 @@ Tested on OSX: (run.sh)
 
 Tested on Ubuntu 14.04:
 
-  sudo docker pull asetia/docker-wireshark
+    sudo docker pull asetia/docker-wireshark
 
-  sudo docker run -ti --net=host --privileged -v $HOME:/root:ro -e XAUTHORITY=/root/.Xauthority -e 
-  DISPLAY=$DISPLAY asetia/docker-wireshark
+    sudo docker run -ti --net=host --privileged -v $HOME:/root:ro -e XAUTHORITY=/root/.Xauthority -e DISPLAY=$DISPLAY asetia/docker-wireshark
 
 
 Run to access command line:
 
-  docker run -t -i asetia/docker-wireshark /bin/bash
+    docker run -t -i asetia/docker-wireshark /bin/bash
