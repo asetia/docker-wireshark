@@ -1,7 +1,6 @@
 # docker-wireshark
 
-
-Run Wireshark within a Docker Container
+===
 
 Tested on OSX: (run.sh)
 
@@ -19,6 +18,7 @@ Tested on OSX: (run.sh)
 
     sudo docker run --net=host --privileged -e DISPLAY=192.168.99.1:0 asetia/wireshark
 
+===
 
 Tested on Ubuntu 14.04:
 
@@ -26,6 +26,7 @@ Tested on Ubuntu 14.04:
 
     sudo docker run -ti --net=host --privileged -v $HOME:/root:ro -e XAUTHORITY=/root/.Xauthority -e DISPLAY=$DISPLAY asetia/docker-wireshark
 
+===
 
 Run to access command line:
 
